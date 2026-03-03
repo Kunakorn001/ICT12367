@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}
+หน้าแรก | ร้านกาแฟ ICT12367
+{% endblock %}
+
+{% block content %}
+<style>
+  .cafe-wrap{
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .cafe-intro{
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .cafe-badge{
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #f3eadf;
+    color: #6b3f2a;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .3px;
+  }
+
+  .cafe-intro h2{
+    margin: 12px 0 6px;
+    font-size: 30px;
+    color: #3a2417;
+  }
+
+  .cafe-intro p{
+    margin: 0 auto;
+    max-width: 720px;
+    color: #6a5a4f;
+    line-height: 1.8;
+  }
+
+  /* ===== ปุ่ม 2 ปุ่ม ===== */
+  .btn-row{
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    transition: 0.2s;
+  }
+
+  .btn-coffee{
+    background: #6b3f2a;
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(107,63,42,0.25);
+  }
+  .btn-coffee:hover{ filter: brightness(0.95); transform: translateY(-1px); }
+
+  .btn-cream{
+    background: #fff;
+    color: #6b3f2a;
+    border: 2px solid #e7d5c6;
+  }
+  .btn-cream:hover{ background: #f7f1ea; transform: translateY(-1px); }
+
+  /* ===== การ์ดเมนู/จุดเด่น ===== */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .card{
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+    padding: 18px;
+    border: 1px solid #f1e7dd;
+  }
+
+  .card .title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .icon{
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: #f3eadf;
+    color: #6b3f2a;
+    font-weight: 900;
+  }
+
+  .card h3{
+    margin: 0;
+    font-size: 18px;
+    color: #3a2417;
+  }
+
+  .card p{
+    margin: 8px 0 0;
+    color: #6a5a4f;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  /* ===== แถบโปรโมชัน/ประกาศ ===== */
+  .promo{
+    margin-top: 18px;
+    background: linear-gradient(135deg, #fff7ef, #ffffff);
+    border: 1px dashed #e3c9b6;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .promo strong{
+    color: #3a2417;
+  }
+
+  .promo p{
+    margin: 0;
+    color: #6a5a4f;
+    line-height: 1.7;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px){
+    .grid{ grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="cafe-wrap">
+  <div class="cafe-intro">
+    <span class="cafe-badge">☕ WELCOME TO ICT12367 CAFÉ</span>
+    <h2>ร้านกาแฟ ICT12367 SPU</h2>
+    <p>
+      ยินดีต้อนรับสู่เว็บไซต์สไตล์คาเฟ่ สำหรับฝึก Django Template
+      มีหน้า “ลงทะเบียน” สำหรับสั่ง/สมัคร และหน้า “เกี่ยวกับเรา” ที่เป็นแกลเลอรี่บรรยากาศร้าน
+    </p>
+
+    <div class="btn-row">
+      <a href="/form" class="btn btn-coffee">ลงทะเบียน / สั่งเครื่องดื่ม</a>
+      <a href="/about" class="btn btn-cream">ดูบรรยากาศร้าน (Gallery)</a>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="title">
+        <div class="icon">1</div>
+        <h3>เมนูแนะนำ</h3>
+      </div>
+      <p>
+        Espresso, Latte, Cappuccino และเมนูพิเศษของร้าน
+        (ออกแบบหน้าเว็บให้เหมือนร้านกาแฟจริง)
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="title">
+        <div class="icon">2</div>
+        <h3>ลงทะเบียนง่าย</h3>
+      </div>
+      <p>
+        ไปหน้าลงทะเบียนเพื่อกรอกชื่อและอายุ (หรือปรับเป็นข้อมูลลูกค้า/ออเดอร์ได้)
+        พร้อมดีไซน์การ์ดสไตล์คาเฟ่
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="title">
+        <div class="icon">3</div>
+        <h3>แกลเลอรี่บรรยากาศ</h3>
+      </div>
+      <p>
+        หน้า About จัดรูปเป็น Grid Gallery เหมือนเมนู/รูปถ่ายในร้าน
+        สวยงามและรองรับมือถือ
+      </p>
+    </div>
+  </div>
+
+  <div class="promo">
+    <div class="icon">%</div>
+    <div>
+      <strong>โปรโมชันวันนี้</strong>
+      <p>
+        สมัครสมาชิก/ลงทะเบียนวันนี้ รับ “คูปองส่วนลด” (ตัวอย่าง) และทดลองใช้งานระบบนำทางผ่านเมนูด้านบนได้ทันที
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        ICT12367 SPU
+        {% endblock %}
+    </title>
+
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        .navbar{
+            background: #3f4754;
+            color: white;
+            padding: 14px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo{
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .navbar a{
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        .navbar a:hover{
+            text-decoration: underline;
+        }
+
+        /* ===== CONTENT ===== */
+        .content{
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer{
+            background: #3f4754;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 13px;
+        }
+        .hero{
+         background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: relative;
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero h1{
+    position: relative;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <div class="navbar">
+        <div class="logo">ICT12367 SPU</div>
+        <div>
+            <a href="/">หน้าแรก</a>
+            <a href="/form">ลงทะเบียน</a>
+            <a href="/about">เกี่ยวกับเรา</a>
+        </div>
+    </div>
+    <!-- ===== HERO SECTION (ใส่รูปตรงนี้) ===== -->
+    <div class="hero">
+        <h1 style="color: aqua;">ยินดีต้อนรับสู่เว็บไซต์ของรายวิชา ICT12367</h1>
+    </div>
+
+    <!-- ===== CONTENT BLOCK ===== -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+        © 2024 ICT12367 SPU | Information Technology
+    </div>
+
+</body>
+</html>
